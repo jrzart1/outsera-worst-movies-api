@@ -8,8 +8,7 @@ Download repository:
 git clone https://github.com/jrzart1/outsera-worst-movies-api.git
 ```
 
-###   
-USING NODE LOCALLY, recommended version 22 (LTS), execute:
+## USING NODE LOCALLY, recommended version 22 (LTS), execute:
 
 ```css
 npm install
@@ -23,8 +22,7 @@ npm run build
 npm run start
 ```
 
-###   
-USING DOCKER
+## USING DOCKER
 
 Build the project image, using:
 
@@ -38,8 +36,7 @@ Then, run the container:
 docker run -d -p 80:80 jrzart/outsera-worst-movies-api
 ```
 
-###   
-USING DOCKER COMPOSE
+## USING DOCKER COMPOSE
 
 ```css
 docker-compose up -d
@@ -73,15 +70,13 @@ To change CSV file, just overwrite the following file and build again:
 src/data/movielist.csv
 ```
 
-###   
-  
-FOR DEVELOPMENT, run local:
+## FOR DEVELOPMENT, run local:
 
 ```css
 npm run dev
 ```
 
-### FOR INTEGRATION TESTS, run:
+## FOR INTEGRATION TESTS, run:
 
 ```css
 npm test
