@@ -1,0 +1,7 @@
+services:
+  outsera-worst-movies-api:
+    image: jrzart/outsera-worst-movies-api
+    container_name: outsera-worst-movies-api
+    restart: on-failure
+    ports:
+      - "80:80"

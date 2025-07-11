@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../src/server';
+import app from '../server';
 
 describe('API testings', () => {
     it('GET /healths should return 200 success', (done) => {

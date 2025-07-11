@@ -3,23 +3,19 @@ import { JSONFile } from 'lowdb/node'
 import * as path from 'path';
 import csvtojson from 'csvtojson';
 import * as fs from 'fs';
-import { IMoviesItem } from '../@types';
 
 export default class LowDbService {
 
+    csvFile = path.resolve(__dirname, '../data/movielist.csv');
+    jsonFile = path.resolve(__dirname, '../data/movielist.json');
+
     convertCsvToJson = async (): Promise<void> => {
-        const csvFile = path.resolve(__dirname, '../data/movielist.csv');
-        const jsonString = await csvtojson({ delimiter: ';' }).fromFile(csvFile);
-        fs.writeFile('./src/data/movielist.json', JSON.stringify(jsonString), (err) => {
-            if (err) {
-                console.error('Erro ao converter CSV para JSON:', err);
-            }
-        });
+        const jsonString = await csvtojson({ delimiter: ';' }).fromFile(this.csvFile);
+        fs.writeFileSync(this.jsonFile, JSON.stringify(jsonString))
     };
 
     populateData = async (): Promise<Low> => {
-        const jsonFile = path.resolve(__dirname, '../data/movielist.json');
-        const adapter = new JSONFile(jsonFile)
+        const adapter = new JSONFile(this.jsonFile)
         const db = new Low(adapter, [])
         await db.read()
         return db;

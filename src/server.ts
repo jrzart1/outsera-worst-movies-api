@@ -6,7 +6,7 @@ import morgan from "morgan";
 
 import { appRouter } from "./routes";
 
-const SERVER_PORT = process.env.PORT || 3000;
+const SERVER_PORT = process.env.PORT || 80;
 
 const app = express();
 app.use(cors());

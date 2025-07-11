@@ -1,20 +1,5 @@
 import { IAwardsIntervalResponse, IMoviesItem } from "../@types";
 
-const mock = {
-    min: [{
-        producer: 'Producer min',
-        interval: 1,
-        previousWin: 2008,
-        followingWin: 2009
-    }],
-    max: [{
-        producer: 'Producer max',
-        interval: 50,
-        previousWin: 1950,
-        followingWin: 2000
-    }]
-}
-
 export default class AwardsIntervalModel {
 
     calculate(data: Array<IMoviesItem>): IAwardsIntervalResponse {
@@ -40,7 +25,7 @@ export default class AwardsIntervalModel {
             })
         })
 
-        // ordena por year e remove unicos
+        // ordena por year
         const moviesSort = moviesByProducer.sort((a, b) => (a.year - b.year));
 
         // calcula intervalo para cada produtor, remove unicos e ordena

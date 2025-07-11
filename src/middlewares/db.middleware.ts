@@ -3,11 +3,11 @@ import LowDbService from "../services/lowdb.service";
 
 const dbMW = async (_req: Request, res: Response, next: NextFunction) => {
   try {
-    const db = new LowDbService();
-    await db.convertCsvToJson();    
+    const dbService = new LowDbService();
+    await dbService.convertCsvToJson();    
 
     /* database instance is being stored on res.locals for further usage */
-    res.locals.db = await db.populateData();
+    res.locals.db = await dbService.populateData();
 
     next();
   } catch (error) {
