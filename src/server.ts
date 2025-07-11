@@ -22,3 +22,5 @@ app.listen(SERVER_PORT, async () => {
     console.log(`Service catch error`);
   }
 });
+
+export default app

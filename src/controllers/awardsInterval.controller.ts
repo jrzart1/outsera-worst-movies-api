@@ -8,7 +8,7 @@ export default class AwardsIntervalController {
       const { db } = res.locals;
 
       const model = new AwardsIntervalModel();
-      const response = model.calculate(db);
+      const response = model.calculate(db.data);
 
       return res.status(200).json(response);
     } catch (error) {

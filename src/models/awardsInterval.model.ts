@@ -17,8 +17,12 @@ const mock = {
 
 export default class AwardsIntervalModel {
 
-    calculate(data: Array<IMoviesItem>): IAwardsIntervalResponse {
-        console.log(data);
-        return mock;
+    // calculate(data: Array<IMoviesItem>): IAwardsIntervalResponse {
+    //     console.log(data);
+    //     return mock;
+    // }
+
+    calculate(data: Array<IMoviesItem>) {
+        return data.filter(i => i.winner);
     }
 }
