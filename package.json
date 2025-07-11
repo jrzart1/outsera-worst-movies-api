@@ -37,6 +37,6 @@
     "build": "tsc",
     "dev": "tsnd -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts",
     "start": "node ./dist/server.js",
-    "test": "mocha -r ts-node/register ./tests/app.test.ts"
+    "test": "mocha -r ts-node/register ./tests/app.test.ts --exit"
   }
 }
